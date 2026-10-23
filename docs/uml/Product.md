@@ -32,7 +32,20 @@ classDiagram
     }
     ProductController ..> ProductService
     ProductService --> Product
-    
-    
-  
+    class DigitalProduct {
+        - downloadUrl : String
+        - fileSizeMB : double
+        + getDownloadUrl() : String
+    }
+    class PhysicalProduct {
+        - weightKg : double
+        - dimensions : String
+        + getWeightKg() : double
+    }
+    Product <|-- DigitalProduct
+    Product <|-- PhysicalProduct
+
+
+
+
 ```
